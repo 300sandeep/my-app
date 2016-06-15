@@ -1,17 +1,19 @@
 # config valid only for current version of Capistrano
+SSHKit.config.command_map[:rake] = "bundle exec rake"
 lock '3.5.0'
 
 set :application, 'my-app'
-set :repo_url, 'git@github.com/300sandeep/my-app.git'
+set :repo_url, 'https://github.com/300sandeep/my-app.git'
 set :branch, :master
 set :deploy_to, '/home/deploy/my-app'
+set :rails_env,'development'
 set :pty, true
-set :linked_files, %w{config/database.yml config/application.yml}
+
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :keep_releases, 5
 set :rbenv_type, :user
-set :rbenv_ruby, 'ruby-2.2.2'  # Edit this to match ruby version you use
-
+set :rbenv_ruby, '2.2.2'  # Edit this to match ruby version you use
+set  :rbenv_path, '$HOME/.rbenv'
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
@@ -31,7 +33,11 @@ set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default value
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-
+set :ssh_options, { :forward_agent => true }
+set :format, :pretty
+set :use_sudo, true
+set :deploy_via, :remote_cache
+set :pty, false
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, '/var/www/my_app_name'
 
@@ -59,6 +65,13 @@ set :rbenv_roles, :all # default value
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+# The test task
+task :whoami do
+  on roles(:all) do
+    execute :whoami
+  end
+end
 
 namespace :deploy do
 
