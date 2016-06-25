@@ -7,6 +7,7 @@ set :repo_url, 'https://github.com/300sandeep/my-app.git'
 set :user, 'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
+set :rbenv_ruby, '2.2.2'
 # Don't change these unless you know what you're doing
 set :pty,             true
 set :use_sudo,        false
