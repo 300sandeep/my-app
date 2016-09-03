@@ -23,8 +23,11 @@
 
 
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+   adapter: postgresql
+  encoding: unicode
+  database: ninja
+  username: postgres
+  password: sa2nd4ee8
   pool: 5
   timeout: 5000
 
