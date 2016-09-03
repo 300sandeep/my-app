@@ -23,7 +23,7 @@
 
 
 development:
-   adapter: postgresql
+  adapter: postgresql
   encoding: unicode
   database: ninja
   username: postgres
