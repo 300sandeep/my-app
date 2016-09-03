@@ -1,0 +1,5 @@
+<% @products.each do |product| %>
+  <% cache product do %>
+    <%= product.title %>
+  <% end %>
+<% end %>
