@@ -20,8 +20,25 @@
 #   <<: *default
 #   database: db/test.sqlite3
 
+
+
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
 production:
   adapter: postgresql
-  host: localhost
-  username: postgres
+  encoding: unicode
   database: ninja
+  username: postgres
+  password: sa2nd4ee8
+  pool: 5
+  timeout: 5000
