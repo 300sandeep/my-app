@@ -4,7 +4,7 @@ development:
   encoding: unicode
   database: ninja
   username: postgres
-  password: sa2nd4ee8
+  password: postgres
   pool: 5
   timeout: 5000
 
@@ -13,6 +13,6 @@ production:
   encoding: unicode
   database: ninja
   username: postgres
-  password: sa2nd4ee8
+  password: postgres
   pool: 5
   timeout: 5000
