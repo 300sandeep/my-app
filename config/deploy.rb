@@ -1,6 +1,6 @@
 # config valid only for current version of Capistrano
-SSHKit.config.command_map[:rake] = "bundle exec rake"
-lock '3.5.0'
+
+lock '3.6.1'
 
 set :application, 'my-app'
 set :repo_url, 'https://github.com/300sandeep/my-app.git'
