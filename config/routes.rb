@@ -1,8 +1,25 @@
 Rails.application.routes.draw do
-  root 'welcomes#index'
-  resources :welcomes
+
+  devise_for :users 
+  devise_scope :user do
+    authenticated :user do
+      root 'pets#new', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
+  resources :welcomes 
   #root 'products#index'
   # resources :products
+  resources :pets 
+  #   collection do
+  #    # get 'my_update'
+  #     put 'my_edit'
+  #   end
+  # end
+  # get 'pets/:year', to: 'pets#my_update' ,constraints: { year: /[a-z]+\.\d+/ }
   # namespace :api do 
   #   namespace :v1 do 
   #     resources :products

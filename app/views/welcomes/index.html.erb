@@ -3,3 +3,22 @@
 
 
  <%= link_to "new", new_welcome_path %>
+
+
+</br>
+<%a=[1,2,3,4]%>
+<%for i in a%>
+  <%sp = a.length-1%>
+  <%while(i<sp)%>
+    <%=" "%>
+    <%sp= sp-1%>
+  <%end%>
+  <%j=1%>
+
+  <%while(i>=j)%>
+    <%=("*")%>
+    <%j=j+1%>
+  <%end%>
+</br>
+<%end%>
+

@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
   <title>MyApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "sample app", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",   new_pet_path %></li>
+            <%id=7%>
+            <li><%= link_to "Help",   pet_path("sdas") %></li>
+            <li>
+              <% if user_signed_in? %>
+                <%= link_to "Log out",  destroy_user_session_path, method: :delete  %>
+              <%else%>
+                <%= link_to "Log in", '#' %>
+              <%end%>  
+            </li>
+          </ul>
+        </nav>
+      </div>
+</header>
+<div class="container">
+      <%= yield %>
+    </div>
+    <footer class="footer">
+  <small>
+    The <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+    by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
+  </small>
+  <nav>
+    <ul>
+      <li><%= link_to "About",   '#' %></li>
+      <li><%= link_to "Contact", "contact_path" %></li>
+      <li><a href="http://news.railstutorial.org/">News</a></li>
+    </ul>
+  </nav>
+</footer>
+    </div>
 
 </body>
 </html>

@@ -14,6 +14,10 @@ class WelcomesController < ApplicationController
     end
   end
 
+  def index
+    
+  end
+
 
   private
 
