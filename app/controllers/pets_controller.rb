@@ -38,7 +38,6 @@ class PetsController < ApplicationController
   # POST /pets.json
   def create
     @pet = Pet.new(pet_params)
-   binding.pry
     respond_to do |format|
 
       if @pet.save
