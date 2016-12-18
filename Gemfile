@@ -29,11 +29,13 @@ gem 'letter_opener'
 gem 'rack-mini-profiler'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'whenever', :require => false
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'responders', '~> 2.0'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
+
 gem 'fog', '>= 1.15.0'
 # Use Unicorn as the app server
 # gem 'unicorn'

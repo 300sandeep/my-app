@@ -38,6 +38,8 @@ class PetsController < ApplicationController
   # POST /pets.json
   def create
     @pet = Pet.new(pet_params)
+    binding.pry
+    PetMailer.welcome_email(@pet, current_user).deliver_now
     respond_to do |format|
 
       if @pet.save
@@ -84,6 +86,7 @@ class PetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_params
-      params.require(:pet).permit(:name, :description, :image)
+      #params.require(:pet).permit(:name, :description, :image)
+      params.require(:pet).permit(:name, :description)
     end
 end
