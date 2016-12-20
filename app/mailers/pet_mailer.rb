@@ -11,7 +11,7 @@ class PetMailer < ApplicationMailer
   	
     #@pet = pet
     @url  = 'http://example.com/login'
-    mail(to: "sandeep@gmail.com", subject: 'Welcome to My Awesome Site')
+    mail(to: "300bisht@gmail.com", subject: 'Welcome to My Awesome Site')
   end
 
 end
